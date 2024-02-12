@@ -1,7 +1,15 @@
 # Course content
 
-## What is Polymorphism?
+## Polymorphism
 
-Classes have the same methods but different implementations.
+- Polimorfizm nima?
+- Polimorfizmga misollar
+
+# Abstraction
+
+- Abstraksiya nima?
+- TypeScriptda Abstraksiyaning ishlatilishi
+- Abstraksiyaga misollar
+- Abstraksiya nimaga kerak?
 
 
