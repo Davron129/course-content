@@ -1,8 +1,18 @@
-class Dog {
-  public name: string;
+class Animal {
+  name: string = "";
 
   constructor(name: string) {
-    this.name = name;
+    this.name = name;    
+  }
+
+  makeSound(): void {
+    console.log("SOme noise")
+  }
+}
+
+class Dog extends Animal {
+  constructor(name: string) {
+    super(name);
   }
 
   public makeSound(): void {
@@ -10,11 +20,9 @@ class Dog {
   }
 }
 
-class Cat {
-  public name: string;
-
+class Cat extends Animal {
   constructor(name: string) {
-    this.name = name;
+    super(name);
   }
 
   public makeSound(): void {
@@ -27,3 +35,6 @@ pocky.makeSound(); // -> meow meow
 
 const toshii: Dog = new Dog("Pocky");
 toshii.makeSound(); // -> wuff wuff
+
+const animal: Animal = new Animal("Animal name");
+animal.makeSound();

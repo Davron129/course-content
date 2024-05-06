@@ -1,76 +1,42 @@
-// // Define an interface
-// interface Shape {
-//     calculateArea(): number;
+abstract class Employee {
+    abstract calculateSalary(): number;
+}
+
+// interface Employee {
+//     calculateSalary(): number;
 // }
 
-// // Implement the interface in classes
-// class Circle implements Shape {
-//     radius: number;
+class ContractEmployee extends Employee {
+    name: string = "";
+    hourlySalary: number = 0;
+    hoursWorked: number = 0;
 
-//     constructor(radius: number) {
-//         this.radius = radius;
-//     }
+    
+    constructor(name: string, hourlySalary: number, hoursWorked: number) {
+        super();
+        this.name = name;
+        this.hourlySalary = hourlySalary;
+        this.hoursWorked = hoursWorked;
+    }
+    
+    calculateSalary(): number {
+        return this.hourlySalary * this.hoursWorked;
+    }
+}
 
-//     calculateArea(): number {
-//         return Math.PI * this.radius * this.radius;
-//     }
-// }
+class FullTimeEmployee extends Employee {
+    name: string = "";
+    hourlySalary: number = 0;
+    hoursWorked: number = 8;
 
-// class Square implements Shape {
-//     sideLength: number;
-
-//     constructor(sideLength: number) {
-//         this.sideLength = sideLength;
-//     }
-
-//     calculateArea(): number {
-//         return this.sideLength * this.sideLength;
-//     }
-// }
-
-// // Usage
-// const circle = new Circle(5);
-// console.log(circle.calculateArea()); // Output: 78.54
-
-// const square = new Square(4);
-// console.log(square.calculateArea()); // Output: 16
-
-// // Define an abstract class
-// abstract class Shape {
-//     abstract calculateArea(): number;
-// }
-
-// // Implement the abstract class in derived classes
-// class Circle extends Shape {
-//     radius: number;
-
-//     constructor(radius: number) {
-//         super();
-//         this.radius = radius;
-//     }
-
-//     calculateArea(): number {
-//         return Math.PI * this.radius * this.radius;
-//     }
-// }
-
-// class Square extends Shape {
-//     sideLength: number;
-
-//     constructor(sideLength: number) {
-//         super();
-//         this.sideLength = sideLength;
-//     }
-
-//     calculateArea(): number {
-//         return this.sideLength * this.sideLength;
-//     }
-// }
-
-// // Usage
-// const circle = new Circle(5);
-// console.log(circle.calculateArea()); // Output: 78.54
-
-// const square = new Square(4);
-// console.log(square.calculateArea()); // Output: 16
-
+    
+    constructor(name: string, hourlySalary: number) {
+        super();
+        this.name = name;
+        this.hourlySalary = hourlySalary;
+    }
+    
+    calculateSalary(): number {
+        return this.hourlySalary * 8;
+    }
+}
